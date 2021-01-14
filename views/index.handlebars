@@ -1,8 +1,8 @@
-<h1>Burgers!!</h1>
+<h1>Welcome to Burger Logger!</h1>
 
-<h2>Burgers that are not devoured!</h2>
+{{!-- <h2>Burgers that are not devoured!</h2> --}}
 
-<ul>
+{{!-- <ul>
   {{#each burgers}}
   {{#unless devoured}}
 <li>
@@ -25,9 +25,9 @@
   {{> burgers/burgers-block devoured=false}}
   {{/if}}
   {{/each}}
-</ul>
+</ul> --}}
 
-<h2>Add a Cat</h2>
+<h2>Add a Burger of your choice</h2>
 <form id="create-form">
 
   <div class="form-group">
@@ -35,11 +35,10 @@
     <input type="text" id="ca" name="burgers_name">
   </div>
 
-  <div class="form-group">
-    <label for="devoured">Hungry?</label><br>
+  {{!-- <div class="form-group">
     <input type="radio" name="Hungry" value="1" id="Hungry" checked> Hungry!<br>
     <input type="radio" name="Hungry" value="0" id="Not Hungry"> Hungry
-  </div>
+  </div> --}}
 
   <button type="submit">Add Burger</button>
 </form>
