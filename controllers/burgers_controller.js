@@ -19,7 +19,7 @@ router.post('/api/burger', (req, res) => {
   burger.insertOne("burger_name"), [req.body.name, req.body.sleepy], (result) => {
     // Send back the ID of the new quote
     res.json({ id: result.insertId });
-  });
+  };
 });
 
 router.put('/api/burger/:id', (req, res) => {
