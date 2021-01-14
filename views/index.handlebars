@@ -8,11 +8,9 @@
 <li>
 	{{burger_name}}
 
-	<button class="change-sleep" data-id="{{id}}" data-newsleep="{{sleep}}">
-		{{#if sleep}}SLEEP TIME!{{else}}WAKE UP!{{/if}}
+	<button class="change-devoured" data-id="{{id}}" data-devoured="{{devoured}}">
+		{{#if devoured}}TIME TO EAT!{{else}}NO MORE FOOD LEFT!{{/if}}
 	</button>
-
-	<button class="delete-cat" data-id="{{this.id}}">DELETE!</button>
 </li>
 
   {{/unless}}
@@ -22,9 +20,9 @@
 <h2>Burgers that are devoured!</h2>
 
 <ul>
-  {{#each cats}}
-  {{#if sleepy}}
-  {{> cats/cat-block sleep=false}}
+  {{#each burgers}}
+  {{#if devoured}}
+  {{> burgers/burgers-block devoured=false}}
   {{/if}}
   {{/each}}
 </ul>
@@ -33,15 +31,15 @@
 <form id="create-form">
 
   <div class="form-group">
-    <label for="ca">Cat Name:</label>
-    <input type="text" id="ca" name="name">
+    <label for="ca">Burger Name:</label>
+    <input type="text" id="ca" name="burgers_name">
   </div>
 
   <div class="form-group">
-    <label for="sleepy">Sleepy?</label><br>
-    <input type="radio" name="sleepy" value="1" id="sleepy" checked> Sleepy!<br>
-    <input type="radio" name="sleepy" value="0" id="awake"> Awake
+    <label for="devoured">Hungry?</label><br>
+    <input type="radio" name="Hungry" value="1" id="Hungry" checked> Hungry!<br>
+    <input type="radio" name="Hungry" value="0" id="Not Hungry"> Hungry
   </div>
 
-  <button type="submit">Add Cat</button>
+  <button type="submit">Add Burger</button>
 </form>
