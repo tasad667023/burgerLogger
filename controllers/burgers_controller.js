@@ -14,12 +14,11 @@ router.get('/', (req, res) => {
   });
 });
 
-router.post('/api/burger', (req, res) => {
+router.post('/api/addburger', (req, res) => {
     // pull value from HTML
-  burger.insertOne("burger_name"), [req.body.name, req.body.sleepy], (result) => {
-    // Send back the ID of the new quote
-    res.json({ id: result.insertId });
-  };
+  burger.insertOne(req.body.burger_name, (result) => {
+    res.json(result);
+  });
 });
 
 router.put('/api/burger/:id', (req, res) => {
@@ -29,7 +28,7 @@ router.put('/api/burger/:id', (req, res) => {
 
   burger.updateOne(
     {
-      sleepy: req.body.sleepy,
+      devoured: req.body.devoured,
     },
     condition,
     (result) => {

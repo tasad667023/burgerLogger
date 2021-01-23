@@ -5,8 +5,8 @@ const burgerMethod = {
       orm.selectAll('burgers', (res) => cb(res));
     },
     // The variables cols and vals are arrays.
-    insertOne(cols, vals, cb) {
-      orm.insertOne('burgers', cols, vals, (res) => cb(res));
+    insertOne(vals, cb) {
+      orm.insertOne('burgers', 'burger_name', vals, (res) => cb(res));
     },
     updateOne(objColVals, condition, cb) {
       orm.updateOne('burgers', objColVals, condition, (res) => cb(res));
